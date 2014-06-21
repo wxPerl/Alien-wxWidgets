@@ -20,6 +20,7 @@ my %VERSIONS =
     '2.9.3'         => 'patches/data-2.9.3',
     '2.9.4'	    => 'patches/data-2.9.4',
     '3.0.0'         => 'patches/data-3.0.0',
+    '3.0.1'         => 'patches/data-3.0.1',
     );
 
 my ($DEFAULT_VERSION, $DEFAULT_ARCHIVE_TYPE) = _get_default_wxwidgets_version_and_type();
@@ -286,7 +287,7 @@ sub _ask {
 sub _get_default_wxwidgets_version_and_type {
     
     # default version and archive type
-    my $defver = '3.0.0';
+    my $defver = '3.0.1';
     my $deftype = 'tar.bz2';
     
     if( $^O =~ /^linux/i) {
