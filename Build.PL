@@ -154,7 +154,7 @@ EOP
     my $wx_config = My::Build::Base->awx_path_search( 'wx-config' );
     if( $wx_config ) {
         my $ans = `wx-config --version`;
-        if( $ans =~ /^2\./ ) {
+        if( $ans =~ /^[23]\./ ) {
             my $prefix = `wx-config --prefix`;
             chomp foreach $ans, $prefix;
             if( _check_installed_widgets_ok($ans, $prefix) ) {
@@ -179,7 +179,7 @@ if( $ENV{AUTOMATED_TESTING} ) {
     if( $^O ne 'darwin' && $^O ne 'MSWin32' ) {
         my $pkg_config = $ENV{PKG_CONFIG} || 'pkg-config';
         my $ans = `$pkg_config --modversion gtk+-2.0 2>&1`;
-        unless( $ans =~ /^2\./ ) {
+        unless( $ans =~ /^[23]\./ ) {
             print <<EOT;
 Could not detect GTK+ 2 by running '$pkg_config': aborting
 
